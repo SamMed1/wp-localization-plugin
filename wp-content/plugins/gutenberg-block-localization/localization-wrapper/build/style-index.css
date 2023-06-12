@@ -17,23 +17,78 @@
   background-color: #ededed;
   display: flex;
   flex-direction: column;
-  padding: 1.5625rem 0.9375rem;
-}
-.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .col {
-  padding: 0 0.9375rem;
+  padding: 1.875rem;
 }
 .editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .col.ui-minify {
   display: none;
 }
-.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .header-row {
-  display: flex;
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] h4 {
+  font-size: 14px;
+  font-weight: 500;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-header-row {
   border-bottom: 1px solid #cfcfcf;
   padding-bottom: 0.9375rem;
   justify-content: space-between;
 }
-.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .header-row .h3-style .components-base-control {
-  margin-top: 10px;
-  font-weight: 400;
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-header-row .h3-style {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-header-row .h3-style::before {
+  content: "";
+  display: inline-block;
+  background-image: url(images/globe.f46f13cf.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20px;
+  width: 20px;
+  margin-right: 12px;
+  margin-bottom: -4px;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-url-pattern-selector {
+  border-bottom: 1px solid #cfcfcf;
+  padding-bottom: 0.9375rem;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-type-selector {
+  border-bottom: 1px solid #cfcfcf;
+  padding-bottom: 0.9375rem;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-type-selector h4 {
+  margin-bottom: 6px;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-type-selector span {
+  display: block;
+  font-size: 12px;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-locale-selector {
+  border-bottom: 1px solid #cfcfcf;
+  padding-bottom: 0.9375rem;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-locale-selector h4 {
+  margin-bottom: 6px;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-locale-selector span {
+  display: block;
+  font-size: 12px;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-block-selector {
+  border-bottom: 1px solid #cfcfcf;
+  padding-bottom: 0.9375rem;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-block-selector h4 {
+  margin-bottom: 6px;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-block-selector span {
+  display: block;
+  font-size: 12px;
+}
+.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .gbl-block-selector .block-editor-inner-blocks {
+  background: #ffffff;
+  padding: 15px;
+  margin-top: 20px;
 }
 .editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .h5-style {
   margin-bottom: 10px;
@@ -67,10 +122,6 @@
 .editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .locale-picker .components-base-control {
   font-size: 12px;
   width: 12%;
-}
-.editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] h3 {
-  color: #000000;
-  margin: 0;
 }
 .editor-styles-wrapper div[data-type="gbl-block/localization-wrapper"] .helper {
   font-size: 14px;

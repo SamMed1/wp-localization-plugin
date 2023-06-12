@@ -354,15 +354,15 @@ export default function Edit( { clientId, attributes, setAttributes, className }
 
 	return (
 		<div { ...blockProps }>
-			<div className='header-row'>
+			<div className='gbl-header-row'>
 				<h3 className='h3-style'>Localization Wrapper
-				<ToggleControl
+				{/* <ToggleControl
 					label="Minify / Expand block"
 					checked={ attributes.ui_state }
 					onChange={() => setAttributes({ ui_state: !attributes.ui_state })}
-				/>
+				/> */}
 				</h3>
-				<div>
+				{/* <div>
 					{ activeLocales() }
 					<div className={ 'inner-list list-' + clientId }></div>
 				</div>
@@ -370,69 +370,85 @@ export default function Edit( { clientId, attributes, setAttributes, className }
 					label="Is this a 'default' block?"
 					checked={ attributes.is_default_block }
 					onChange={() => setAttributes({ is_default_block: !attributes.is_default_block })}
-				/>
+				/> */}
 			</div>
-			<div className={ "col " + blockState() }>
-				<h4 className='h5-style'>Top locales</h4>
-				<div class="locale-picker border-bottom">
+			<div className='gbl-url-pattern-selector'>
+				<h4>Select your website’s URL localization pattern</h4>
+			</div>
+			<div className='gbl-type-selector'>
+				<h4>Is this a ‘universal’ block?</h4>
+				<span>If ‘yes’, wrapped blocks will display on every locale EXCLUDING the locales you choose.</span>
+				<span>If ‘no’, wrapped blocks wlll ONLY display on the locales you choose.</span>
+			</div>
+			<div className='gbl-locale-selector'>
+				<h4>Locale selector</h4>
+				<span>Select the locales that you wish to include / exclude ( depending on your above selection ) wrapped block on.</span>
+				<div className={ "col " + blockState() }>
+					<h4 className='h5-style'>Top locales</h4>
+					<div class="locale-picker border-bottom">
+						<ToggleControl
+							label="us en"
+							checked={ attributes.block_locale_us_en }
+							onChange={() => setAttributes({ block_locale_us_en: !attributes.block_locale_us_en })}
+						/>
+						<ToggleControl
+							label="ca en"
+							checked={ attributes.block_locale_ca_en }
+							onChange={() => setAttributes({ block_locale_ca_en: !attributes.block_locale_ca_en })}
+						/>
+						<ToggleControl
+							label="ca fr"
+							checked={ attributes.block_locale_ca_fr }
+							onChange={() => setAttributes({ block_locale_ca_fr: !attributes.block_locale_ca_fr })}
+						/>
+						<ToggleControl
+							label="gb en"
+							checked={ attributes.block_locale_gb_en }
+							onChange={() => setAttributes({ block_locale_gb_en: !attributes.block_locale_gb_en })}
+						/>
+						<ToggleControl
+							label="au en"
+							checked={ attributes.block_locale_au_en }
+							onChange={() => setAttributes({ block_locale_au_en: !attributes.block_locale_au_en })}
+						/>
+						<ToggleControl
+							label="nz en"
+							checked={ attributes.block_locale_nz_en }
+							onChange={() => setAttributes({ block_locale_nz_en: !attributes.block_locale_nz_en })}
+						/>
+						<ToggleControl
+							label="de de"
+							checked={ attributes.block_locale_de_de }
+							onChange={() => setAttributes({ block_locale_de_de: !attributes.block_locale_de_de })}
+						/>
+						<ToggleControl
+							label="fr fr"
+							checked={ attributes.block_locale_fr_fr }
+							onChange={() => setAttributes({ block_locale_fr_fr: !attributes.block_locale_fr_fr })}
+						/>
+						<ToggleControl
+							label="fr en"
+							checked={ attributes.block_locale_fr_en }
+							onChange={() => setAttributes({ block_locale_fr_en: !attributes.block_locale_fr_en })}
+						/>
+					</div>
+					<h4 className='h5-style'>Other locales</h4>
 					<ToggleControl
-						label="us en"
-						checked={ attributes.block_locale_us_en }
-						onChange={() => setAttributes({ block_locale_us_en: !attributes.block_locale_us_en })}
+						label="Show other locale options"
+						checked={ attributes.other_locales_show }
+						onChange={() => setAttributes({ other_locales_show: !attributes.other_locales_show })}
 					/>
-					<ToggleControl
-						label="ca en"
-						checked={ attributes.block_locale_ca_en }
-						onChange={() => setAttributes({ block_locale_ca_en: !attributes.block_locale_ca_en })}
-					/>
-					<ToggleControl
-						label="ca fr"
-						checked={ attributes.block_locale_ca_fr }
-						onChange={() => setAttributes({ block_locale_ca_fr: !attributes.block_locale_ca_fr })}
-					/>
-					<ToggleControl
-						label="gb en"
-						checked={ attributes.block_locale_gb_en }
-						onChange={() => setAttributes({ block_locale_gb_en: !attributes.block_locale_gb_en })}
-					/>
-					<ToggleControl
-						label="au en"
-						checked={ attributes.block_locale_au_en }
-						onChange={() => setAttributes({ block_locale_au_en: !attributes.block_locale_au_en })}
-					/>
-					<ToggleControl
-						label="nz en"
-						checked={ attributes.block_locale_nz_en }
-						onChange={() => setAttributes({ block_locale_nz_en: !attributes.block_locale_nz_en })}
-					/>
-					<ToggleControl
-						label="de de"
-						checked={ attributes.block_locale_de_de }
-						onChange={() => setAttributes({ block_locale_de_de: !attributes.block_locale_de_de })}
-					/>
-					<ToggleControl
-						label="fr fr"
-						checked={ attributes.block_locale_fr_fr }
-						onChange={() => setAttributes({ block_locale_fr_fr: !attributes.block_locale_fr_fr })}
-					/>
-					<ToggleControl
-						label="fr en"
-						checked={ attributes.block_locale_fr_en }
-						onChange={() => setAttributes({ block_locale_fr_en: !attributes.block_locale_fr_en })}
+					{ otherLocaleOptions() }
+				</div>
+			</div>
+			<div className='gbl-block-selector'>
+				<h4>Block selector</h4>
+				<span>Choose the blocks that you wish to be localized, here.</span>
+				<div className={ "col " + blockState() }>
+					<InnerBlocks
+						// templateLock="all"
 					/>
 				</div>
-				<h4 className='h5-style'>Other locales</h4>
-				<ToggleControl
-					label="Show other locale options"
-					checked={ attributes.other_locales_show }
-					onChange={() => setAttributes({ other_locales_show: !attributes.other_locales_show })}
-				/>
-				{ otherLocaleOptions() }
-			</div>
-			<div className={ "col " + blockState() }>
-				<InnerBlocks
-					// templateLock="all"
-				/>
 			</div>
 		</div>
 	);

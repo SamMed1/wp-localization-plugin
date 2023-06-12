@@ -19,27 +19,99 @@
 		background-color: #ededed;
 		display: flex;
 		flex-direction: column;
-		padding: rem(25px) $gutter-width-single;
+		padding: rem(30px);
 
 		.col {
-			padding: 0 $gutter-width-single;
-
 			&.ui-minify {
 				display: none;
 			}
 		}
 
-		.header-row {
-			display: flex;
+		h4 {
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		// Header row.
+		.gbl-header-row {
 			border-bottom: 1px solid #cfcfcf;
 			padding-bottom: $gutter-width-single;
 			justify-content: space-between;
 
 			.h3-style {
-				.components-base-control {
-					margin-top: 10px;
-					font-weight: 400;
+				color: $color-black;
+				font-size: 16px;
+				font-weight: 600;
+				margin: 0;
+
+				&::before {
+					content: '';
+					display: inline-block;
+					background-image: url('/../assets/img/globe.png');
+					background-repeat: no-repeat;
+					background-size: cover;
+					height: 20px;
+					width: 20px;
+					margin-right: 12px;
+					margin-bottom: -4px;
 				}
+			}
+		}
+
+		// URL localization picker row.
+		.gbl-url-pattern-selector {
+			border-bottom: 1px solid #cfcfcf;
+			padding-bottom: $gutter-width-single;
+		}
+
+		// Block type selector row.
+		.gbl-type-selector {
+			border-bottom: 1px solid #cfcfcf;
+			padding-bottom: $gutter-width-single;
+
+			h4 {
+				margin-bottom: 6px;
+			}
+
+			span {
+				display: block;
+				font-size: 12px;
+			}
+		}
+
+		// Locale selector row.
+		.gbl-locale-selector {
+			border-bottom: 1px solid #cfcfcf;
+			padding-bottom: $gutter-width-single;
+
+			h4 {
+				margin-bottom: 6px;
+			}
+
+			span {
+				display: block;
+				font-size: 12px;
+			}
+		}
+
+		// Block selector row.
+		.gbl-block-selector {
+			border-bottom: 1px solid #cfcfcf;
+			padding-bottom: $gutter-width-single;
+
+			h4 {
+				margin-bottom: 6px;
+			}
+
+			span {
+				display: block;
+				font-size: 12px;
+			}
+
+			.block-editor-inner-blocks {
+				background: $color-white;
+				padding: 15px;
+				margin-top: 20px;
 			}
 		}
 
@@ -79,11 +151,6 @@
 				font-size: 12px;
 				width: 12%;
 			}
-		}
-
-		h3 {
-			color: $color-black;
-			margin: 0;
 		}
 
 		.helper {

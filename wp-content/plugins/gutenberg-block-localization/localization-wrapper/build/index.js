@@ -607,24 +607,16 @@ function Edit(_ref) {
     });
   }, 2000);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "header-row"
+    className: "gbl-header-row"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "h3-style"
-  }, "Localization Wrapper", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: "Minify / Expand block",
-    checked: attributes.ui_state,
-    onChange: () => setAttributes({
-      ui_state: !attributes.ui_state
-    })
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, activeLocales(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: 'inner-list list-' + clientId
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: "Is this a 'default' block?",
-    checked: attributes.is_default_block,
-    onChange: () => setAttributes({
-      is_default_block: !attributes.is_default_block
-    })
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Localization Wrapper")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "gbl-url-pattern-selector"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Select your website\u2019s URL localization pattern")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "gbl-type-selector"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Is this a \u2018universal\u2019 block?"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "If \u2018yes\u2019, wrapped blocks will display on every locale EXCLUDING the locales you choose."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "If \u2018no\u2019, wrapped blocks wlll ONLY display on the locales you choose.")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "gbl-locale-selector"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Locale selector"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Select the locales that you wish to include / exclude ( depending on your above selection ) wrapped block on."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col " + blockState()
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
     className: "h5-style"
@@ -692,11 +684,13 @@ function Edit(_ref) {
     onChange: () => setAttributes({
       other_locales_show: !attributes.other_locales_show
     })
-  }), otherLocaleOptions()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), otherLocaleOptions())), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "gbl-block-selector"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Block selector"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Choose the blocks that you wish to be localized, here."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "col " + blockState()
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks
   // templateLock="all"
-  , null)));
+  , null))));
 }
 
 /***/ }),
