@@ -374,6 +374,16 @@ export default function Edit( { clientId, attributes, setAttributes, className }
 			</div>
 			<div className='gbl-url-pattern-selector'>
 				<h4>Select your website’s URL localization pattern</h4>
+				<SelectControl
+						label="URL Pattern"
+						value={ attributes.block_color }
+						options={ [
+							{ label: 'Language & Country (joined): EG www.your-website.com/en_US/', value: 'block-background-red-medium' },
+							{ label: 'Language or Country only: EG www.your-website.com/en/', value: 'block-background-blue-medium' },
+							{ label: 'Country THEN language: EG www.your-website.com/us/en', value: 'block-background-blue-medium' },
+						] }
+						// onChange={( value ) => setAttributes({ block_color: value })}
+					/>
 			</div>
 			<div className='gbl-type-selector'>
 				<h4>Is this a ‘universal’ block?</h4>

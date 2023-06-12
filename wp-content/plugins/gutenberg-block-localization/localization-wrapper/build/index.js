@@ -612,7 +612,21 @@ function Edit(_ref) {
     className: "h3-style"
   }, "Localization Wrapper")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gbl-url-pattern-selector"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Select your website\u2019s URL localization pattern")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Select your website\u2019s URL localization pattern"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
+    label: "URL Pattern",
+    value: attributes.block_color,
+    options: [{
+      label: 'Language & Country (joined): EG www.your-website.com/en_US/',
+      value: 'block-background-red-medium'
+    }, {
+      label: 'Language or Country only: EG www.your-website.com/en/',
+      value: 'block-background-blue-medium'
+    }, {
+      label: 'Country THEN language: EG www.your-website.com/us/en',
+      value: 'block-background-blue-medium'
+    }]
+    // onChange={( value ) => setAttributes({ block_color: value })}
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gbl-type-selector"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", null, "Is this a \u2018universal\u2019 block?"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "If \u2018yes\u2019, wrapped blocks will display on every locale EXCLUDING the locales you choose."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "If \u2018no\u2019, wrapped blocks wlll ONLY display on the locales you choose.")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "gbl-locale-selector"
