@@ -188,6 +188,21 @@ export default function Edit( { clientId, attributes, setAttributes, className }
 		}
 	}
 
+	const northAmericaCountryOnly = function() {
+		// if ( attributes.other_locales_show == true ) {
+			return (
+				<div class="locale-picker">
+					<ToggleControl
+						className='toggle-control-ai'
+						label="ai"
+						checked={ attributes.block_locale_ph_en }
+						onChange={() => setAttributes({ block_locale_ph_en: !attributes.block_locale_ph_en })}
+					/>
+				</div>
+			)
+		// }
+	}
+
 	const activeLocales = function() {
 		let localeList = [];
 		let localesState = '';
@@ -379,7 +394,8 @@ export default function Edit( { clientId, attributes, setAttributes, className }
 						value={ attributes.block_color }
 						options={ [
 							{ label: 'Language & Country (joined): EG www.your-website.com/en_US/', value: 'block-background-red-medium' },
-							{ label: 'Language or Country only: EG www.your-website.com/en/', value: 'block-background-blue-medium' },
+							{ label: 'Language only: EG www.your-website.com/en/', value: 'block-background-blue-medium' },
+							{ label: 'Country only: EG www.your-website.com/us/', value: 'block-background-blue-medium' },
 							{ label: 'Country THEN language: EG www.your-website.com/us/en', value: 'block-background-blue-medium' },
 						] }
 						// onChange={( value ) => setAttributes({ block_color: value })}
@@ -389,15 +405,20 @@ export default function Edit( { clientId, attributes, setAttributes, className }
 				<h4>Is this a ‘universal’ block?</h4>
 				<span>If ‘yes’, wrapped blocks will display on every locale EXCLUDING the locales you choose.</span>
 				<span>If ‘no’, wrapped blocks wlll ONLY display on the locales you choose.</span>
+				<ToggleControl
+					label="'Universal' block?"
+					// checked={ attributes.progress_circle_show }
+					// onChange={() => setAttributes({ progress_circle_show: !attributes.progress_circle_show })}
+				/>
 			</div>
 			<div className='gbl-locale-selector'>
 				<h4>Locale selector</h4>
 				<span>Select the locales that you wish to include / exclude ( depending on your above selection ) wrapped block on.</span>
 				<div className={ "col " + blockState() }>
-					<h4 className='h5-style'>Top locales</h4>
-					<div class="locale-picker border-bottom">
+					<h4 className='h5-style'>Popular locales</h4>
+					{/* <div class="locale-picker border-bottom" style="display: none;">
 						<ToggleControl
-							label="us en"
+							label="/us/en/"
 							checked={ attributes.block_locale_us_en }
 							onChange={() => setAttributes({ block_locale_us_en: !attributes.block_locale_us_en })}
 						/>
@@ -441,14 +462,78 @@ export default function Edit( { clientId, attributes, setAttributes, className }
 							checked={ attributes.block_locale_fr_en }
 							onChange={() => setAttributes({ block_locale_fr_en: !attributes.block_locale_fr_en })}
 						/>
+					</div> */}
+					<div class="locale-picker border-bottom">
+						<ToggleControl
+							
+							label="/us/"
+							checked={ attributes.block_locale_us_en }
+							onChange={() => setAttributes({ block_locale_us_en: !attributes.block_locale_us_en })}
+						/>
+						<ToggleControl
+							className='toggle-control-ca'
+							label="/ca/"
+							checked={ attributes.block_locale_ca_en }
+							onChange={() => setAttributes({ block_locale_ca_en: !attributes.block_locale_ca_en })}
+						/>
+						<ToggleControl
+							className='toggle-control-gb'
+							label="/gb/"
+							checked={ attributes.block_locale_ca_fr }
+							onChange={() => setAttributes({ block_locale_ca_fr: !attributes.block_locale_ca_fr })}
+						/>
+						<ToggleControl
+							className='toggle-control-uk'
+							label="/uk/"
+							checked={ attributes.block_locale_gb_en }
+							onChange={() => setAttributes({ block_locale_gb_en: !attributes.block_locale_gb_en })}
+						/>
+						<ToggleControl
+							className='toggle-control-fr'
+							label="/fr/"
+							checked={ attributes.block_locale_au_en }
+							onChange={() => setAttributes({ block_locale_au_en: !attributes.block_locale_au_en })}
+						/>
+						<ToggleControl
+							className='toggle-control-es'
+							label="/es/"
+							checked={ attributes.block_locale_nz_en }
+							onChange={() => setAttributes({ block_locale_nz_en: !attributes.block_locale_nz_en })}
+						/>
+						<ToggleControl
+							className='toggle-control-de'
+							label="/de/"
+							checked={ attributes.block_locale_de_de }
+							onChange={() => setAttributes({ block_locale_de_de: !attributes.block_locale_de_de })}
+						/>
+						<ToggleControl
+							className='toggle-control-it'
+							label="/it/"
+							checked={ attributes.block_locale_fr_fr }
+							onChange={() => setAttributes({ block_locale_fr_fr: !attributes.block_locale_fr_fr })}
+						/>
+						<ToggleControl
+							className='toggle-control-nz'
+							label="/nz/"
+							checked={ attributes.block_locale_fr_en }
+							onChange={() => setAttributes({ block_locale_fr_en: !attributes.block_locale_fr_en })}
+						/>
+						<ToggleControl
+							className='toggle-control-au'
+							label="/au/"
+							checked={ attributes.block_locale_fr_en }
+							onChange={() => setAttributes({ block_locale_fr_en: !attributes.block_locale_fr_en })}
+						/>
 					</div>
-					<h4 className='h5-style'>Other locales</h4>
+					{/* <h4 className='h5-style'>Other locales</h4>
 					<ToggleControl
 						label="Show other locale options"
 						checked={ attributes.other_locales_show }
 						onChange={() => setAttributes({ other_locales_show: !attributes.other_locales_show })}
-					/>
-					{ otherLocaleOptions() }
+					/> */}
+					{/* { otherLocaleOptions() } */}
+					<h4 className='h5-style'>North America</h4>
+					{ northAmericaCountryOnly() } 
 				</div>
 			</div>
 			<div className='gbl-block-selector'>
